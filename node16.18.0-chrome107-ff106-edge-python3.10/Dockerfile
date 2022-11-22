@@ -1,6 +1,6 @@
 FROM cypress/browsers:node16.18.0-chrome107-ff106-edge
 
-RUN apt-get update && apt-get -y upgrade && \
+RUN apt-get update && \
     apt-get install -y build-essential python3-pip && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean && \

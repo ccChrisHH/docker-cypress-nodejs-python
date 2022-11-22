@@ -1,6 +1,6 @@
 FROM cypress/browsers:node18.6.0-chrome105-ff104
 
-RUN apt-get update && apt-get -y upgrade && \
+RUN apt-get update && \
     apt-get install -y build-essential python3-pip gnupg dirmngr && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean && \
@@ -23,3 +23,5 @@ RUN apt-get update && apt-get -y upgrade && \
     cd / && \
     rm Python-3.10.*.tgz && rm -rf Python-3.10.0 && \
     apt-get purge -y build-essential && apt-get autoremove -y
+
+CMD ["sh", "-c", "tail -f /dev/null"]
